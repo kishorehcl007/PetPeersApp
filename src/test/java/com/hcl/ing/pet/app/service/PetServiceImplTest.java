@@ -66,7 +66,7 @@ public class PetServiceImplTest {
 		Mockito.when(petRepository.save(pet)).thenReturn(pet);
 		
 		PetBuyResponse buyPet = petServiceImpl.buyPet(request);
-		assertEquals("Pet purchased to your cart successfully ...!", buyPet.getMessage());
+		assertEquals("Pet added to cart successfully ...!", buyPet.getMessage());
 		
 		
 	}
