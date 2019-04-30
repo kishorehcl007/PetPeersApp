@@ -1,4 +1,4 @@
-package com.hcl.pet.app.controller;
+package com.hcl.ing.pet.app.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
