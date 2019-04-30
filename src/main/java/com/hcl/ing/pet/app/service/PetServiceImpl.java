@@ -30,7 +30,7 @@ public class PetServiceImpl implements PetService {
 			pet.setUserId(request.getUserId());
 			Pet petresponse = petRepository.save(pet);
 			if(petresponse!=null) {
-				response.setMessage("Pet purchased to your cart successfully ...!");
+				response.setMessage("Pet added to cart successfully ...!");
 			}
 			
 			
@@ -53,6 +53,7 @@ public class PetServiceImpl implements PetService {
 				dto.setPetId(pet.getPetId());
 				dto.setPetName(pet.getPetName());
 				dto.setPlace(pet.getPlace());
+				dto.setAvailability(pet.getAvailability());
 				dto.setUserId(pet.getUserId());
 				petDtoList.add(dto);
 			});
@@ -81,6 +82,25 @@ public class PetServiceImpl implements PetService {
 		}
 		
 		return response;
+	}
+	
+	public List<PetDto> listPet() {
+		List<PetDto> list=new ArrayList<>();
+		
+		List<Pet> petListResult=petRepository.findAll();
+		for(Pet pet:petListResult)
+		{
+			PetDto petDto=new PetDto();
+			petDto.setPetId(pet.getPetId());
+			petDto.setPetName(pet.getPetName());
+			petDto.setUserId(pet.getUserId());
+			petDto.setAge(pet.getAge());
+			petDto.setPlace(pet.getPlace());
+			petDto.setAvailability(pet.getAvailability());
+			list.add(petDto);
+		}
+		return list;
+		
 	}
 	
 	
