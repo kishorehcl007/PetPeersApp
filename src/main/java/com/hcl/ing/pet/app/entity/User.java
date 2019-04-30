@@ -26,6 +26,48 @@ public class User implements Serializable {
 	private String password;
 	
 	
+	@Column(name = "USERNAME")
+	private String username;
+	
+
+
+	@Column(name = "ADDRESS")
+	private String address;
+	
+	@Column(name = "CONTACTDETAILS")
+	private String contactDetails;
+	
+	
+	public String getUsername() {
+		return username;
+	}
+
+
+	public void setUsername(String username) {
+		this.username = username;
+	}
+
+
+	public String getAddress() {
+		return address;
+	}
+
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
+
+	public String getContactDetails() {
+		return contactDetails;
+	}
+
+
+	public void setContactDetails(String contactDetails) {
+		this.contactDetails = contactDetails;
+	}
+
+	
 	public User() {
 		super();
 	}
@@ -69,7 +111,14 @@ public class User implements Serializable {
 		builder.append(", email=");
 		builder.append(email);
 		builder.append(", password=");
-		builder.append(password);
+		builder.append(password);		
+		builder.append(", username=");
+		builder.append(username);		
+		builder.append(", address=");
+		builder.append(address);		
+		builder.append(", contactDetails=");
+		builder.append(contactDetails);
+		
 		builder.append("]");
 		return builder.toString();
 	}
