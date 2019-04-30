@@ -44,7 +44,7 @@ public class PetServiceImplTest {
 		pet.setPetName("dog");
 		pet.setPlace("ctr");
 		pet.setAvailability('T');
-		
+		 
 		//when(petRepository.save(pet)).thenReturn(pet);
 		PetResponse petRes = petServiceImpl.createPet(petRequest);
 		assertEquals("Pet added successfully..!", petRes.getMessage());
