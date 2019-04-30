@@ -1,5 +1,7 @@
 package com.hcl.ing.pet.app.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -12,6 +14,7 @@ import com.hcl.ing.pet.app.service.PetServiceImpl;
 import com.hcl.pet.app.dto.MyPetsResponse;
 import com.hcl.pet.app.dto.PetBuyRequest;
 import com.hcl.pet.app.dto.PetBuyResponse;
+import com.hcl.pet.app.dto.PetDto;
 import com.hcl.pet.app.dto.PetRequest;
 import com.hcl.pet.app.dto.PetResponse;
 
@@ -38,5 +41,12 @@ public class PetController {
 		return petServiceImpl.createPet(request);
 	}
 	
-	
+	@GetMapping("/petlist")
+	public List<PetDto> listPet()
+	{
+		List<PetDto> petListResult=petServiceImpl.listPet();
+		
+		return petListResult;
+		
+	}
 }

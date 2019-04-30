@@ -28,7 +28,7 @@ public class UserController {
 		if (value)
 			return "User created sucessfully";
 		else
-			return "User not created";
+			return "Password and confirm password doesn't match..!";
 
 	}
 	

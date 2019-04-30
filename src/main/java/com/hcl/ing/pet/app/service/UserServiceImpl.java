@@ -54,7 +54,7 @@ public class UserServiceImpl implements UserService {
 		    		  
 		    	  }
 		    	  else if(!user.getEmail().equals(mailId)) {
-		    		  response.setResponse("You are not the login user. Please go and register");
+		    		  response.setResponse("Unregistered user please register ..!");
 		    	  }
 		    	  else {
 		    		  response.setResponse("email or password did not match");

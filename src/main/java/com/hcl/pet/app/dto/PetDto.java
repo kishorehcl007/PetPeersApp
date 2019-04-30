@@ -16,6 +16,16 @@ public class PetDto implements Serializable {
 	
 	private Long userId;
 	
+	private Character availability;
+	
+	public Character getAvailability() {
+		return availability;
+	}
+
+	public void setAvailability(Character availability) {
+		this.availability = availability;
+	}
+
 	public PetDto() {
 		super();
 	}
