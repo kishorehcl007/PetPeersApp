@@ -1,6 +1,7 @@
 package com.hcl.ing.pet.app.service;
 
 import static org.junit.Assert.assertEquals;
+import static org.mockito.Mockito.when;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -33,7 +34,21 @@ public class UserRegistrationTests {
 	    user.setAddress("Hyderabad");
 	    user.setContactDetails("423");
 	    
-	    assertEquals(true, true);
+	    User user1 = new User();
+	    user1.setUserId(1L);
+	    user1.setEmail("h@gmail.com");
+	    user1.setPassword("priya");
+	    user1.setUsername("hari");
+	    user1.setAddress("Hyderabad");
+	    user1.setContactDetails("423");
+	    
+	    
+	    //when(userRepository.save(user1)).thenReturn(user1);
+	    
+	    boolean createUser = userServiceImpl.createUser(user);
+	    
+	    
+	    assertEquals(true, createUser);
 	}
 
 }
